@@ -1,0 +1,24 @@
+<div class="dashboard">
+  <h1>Admin Dashboard</h1>
+  <div class="card-container">
+    <div class="card" [routerLink]="'/add-product'">
+      <h2>Add Product</h2>
+      <p>Add a new product to the inventory.</p>
+    </div>
+
+    <div class="card" [routerLink]="'/all-products'">
+      <h2>View All Products</h2>
+      <p>Check and manage all the available products.</p>
+    </div>
+
+    <div class="card" [routerLink]="'/all-customers'">
+      <h2>View All Customers</h2>
+      <p>View details of all registered customers.</p>
+    </div>
+
+    <div class="card" [routerLink]="'/all-orders'">
+      <h2>View All Orders</h2>
+      <p>Track and manage all orders placed by customers.</p>
+    </div>
+  </div>
+</div>

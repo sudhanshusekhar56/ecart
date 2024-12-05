@@ -1,0 +1,16 @@
+<div class="product-container">
+  <ng-container *ngFor="let product of products">
+    <div *ngIf="product.isAvailable" class="product-card">
+      <h2>{{ product.productName }}</h2>
+      <p><strong>Price:</strong> ${{ product.productPrice }}</p>
+      <p><strong>Category:</strong> {{ product.productCategory }}</p>
+      <p>{{ product.productDescription }}</p>
+      <div class="button-group">
+        <button class="btn add-to-cart" (click)="addToCart(product)">
+          Add to Cart
+        </button>
+        <button class="btn buy-now" (click)="buyNow(product)">Buy Now</button>
+      </div>
+    </div>
+  </ng-container>
+</div>

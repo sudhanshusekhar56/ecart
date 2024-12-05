@@ -1,0 +1,23 @@
+<div class="view-customers-container">
+  <h1>View Customers</h1>
+  <table class="customer-table">
+    <thead>
+      <tr>
+        <th>Customer ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Address</th>
+        <th>Admin</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let customer of customers">
+        <td>{{ customer.customerId }}</td>
+        <td>{{ customer.customerName }}</td>
+        <td>{{ customer.customerEmail }}</td>
+        <td>{{ customer.customerAddress }}</td>
+        <td>{{ customer.isAdmin ? "Yes" : "No" }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

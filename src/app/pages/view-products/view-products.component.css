@@ -1,0 +1,117 @@
+.view-products-container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #3b1e54;
+}
+
+.product-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.product-table th,
+.product-table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+
+.product-table th {
+  background-color: #d4bee4;
+  color: #3b1e54;
+}
+
+.product-table td {
+  background-color: #eeeeee;
+}
+
+.btn {
+  padding: 8px 15px;
+  margin: 5px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.update-btn {
+  background-color: #4caf50;
+  color: white;
+  font-weight: bold;
+}
+
+.delete-btn {
+  background-color: #f44336;
+  color: white;
+  font-weight: bold;
+}
+
+.update-product-form {
+  margin-top: 30px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.update-product-form h2 {
+  text-align: center;
+  color: #3b1e54;
+  font-size: 22px;
+}
+
+.update-product-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #3b1e54;
+}
+
+.update-product-form input,
+.update-product-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.submit-btn {
+  background-color: #4caf50;
+  color: white;
+  font-weight: bold;
+  padding: 10px 15px;
+}
+
+.cancel-btn {
+  background-color: #f44336;
+  color: white;
+  font-weight: bold;
+  padding: 10px 15px;
+}
+
+.cancel-btn:hover,
+.submit-btn:hover {
+  opacity: 0.8;
+}
+
+.update-product-form button {
+  margin-top: 10px;
+}
+
+.product-table td,
+.product-table th {
+  font-size: 14px;
+  color: #3b1e54;
+}
+
+.product-table td {
+  background-color: #f9f9f9;
+}
