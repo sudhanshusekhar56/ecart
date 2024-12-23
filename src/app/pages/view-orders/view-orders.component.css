@@ -1,12 +1,30 @@
-/* view-orders.component.css */
+.main {
+  min-height: 88vh;
+}
+
 .view-orders-container {
   padding: 20px;
   font-family: Arial, sans-serif;
 }
 
+app-popup {
+  position: absolute;
+  top: 10;
+  right: 10;
+}
+
+.back-button {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 h1 {
   text-align: center;
   margin-bottom: 20px;
+  font-size: 24px;
+  color: #16423c; /* Dark green for header */
 }
 
 .order-table {
@@ -23,11 +41,21 @@ h1 {
 }
 
 .order-table th {
-  background-color: #f4f4f4;
+  background-color: #e9efec; /* Light grayish background */
+  color: #16423c; /* Dark green text */
 }
 
 .order-table td {
-  background-color: #fff;
+  background-color: #ffffff; /* White background for table data */
+}
+
+.order-table tr:nth-child(even) td {
+  background-color: #f4f4f4; /* Light gray for even rows */
+}
+
+.order-table tr:hover td {
+  background-color: #6a9c89; /* Lighter green on hover */
+  color: white;
 }
 
 .select-status {
@@ -35,7 +63,7 @@ h1 {
 }
 
 .update-btn {
-  background-color: #4caf50;
+  background-color: #4caf50; /* Green */
   color: white;
   padding: 5px 10px;
   border: none;

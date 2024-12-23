@@ -1,24 +1,26 @@
-import { Component } from '@angular/core';
-import { ProductService } from '../../service/product.service';
-import { Product } from '../../model/product.model';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { Component, ViewChild } from "@angular/core";
+import { ProductService } from "../../service/product.service";
+import { Product } from "../../model/product.model";
+import { CommonModule } from "@angular/common";
+import { FormsModule } from "@angular/forms";
+import { PopupComponent } from "../../components/popup/popup.component";
+import { GoBackComponent } from "../../components/go-back/go-back.component";
 
 @Component({
-  selector: 'app-view-products',
-  imports: [CommonModule, FormsModule],
-  templateUrl: './view-products.component.html',
-  styleUrls: ['./view-products.component.css'],
+  selector: "app-view-products",
+  imports: [CommonModule, FormsModule, PopupComponent, GoBackComponent],
+  templateUrl: "./view-products.component.html",
+  styleUrls: ["./view-products.component.css"],
 })
 export class ViewProductsComponent {
   products: Product[] = [];
   isUpdateFormVisible = false;
   selectedProduct: Product = {
     productId: 0,
-    productName: '',
+    productName: "",
     productPrice: 0,
-    productCategory: '',
-    productDescription: '',
+    productCategory: "",
+    productDescription: "",
     isAvailable: true,
   };
 
@@ -36,11 +38,12 @@ export class ViewProductsComponent {
         this.products = data;
       },
       error: (error: any) => {
-        console.error('Error fetching products:', error);
+        console.error("Error fetching products:", error);
       },
     });
   }
 
+  @ViewChild("popup") popup!: PopupComponent;
   // Show the Update form with the selected product data
   openUpdateForm(product: Product): void {
     this.selectedProduct = { ...product }; // Create a copy of the product
@@ -57,33 +60,28 @@ export class ViewProductsComponent {
     this.productService.deleteProduct(productId).subscribe({
       next: () => {
         this.fetchProducts();
-        alert('Product deleted successfully');
+        this.popup.showPopup("Product deleted successfully");
       },
       error: (error: any) => {
-        console.error('Error deleting product:', error);
-        alert('Error deleting product');
+        console.error("Error deleting product:", error);
+        this.popup.showPopup("Error deleting product");
       },
     });
   }
 
-  // Update the selected product
   updateProduct(): void {
-    // this.productService.updateProduct(this.selectedProduct).subscribe({
-    //   next: () => {
-    //     // Update the product in the table
-    //     const index = this.products.findIndex(
-    //       (product) => product.productId === this.selectedProduct.productId
-    //     );
-    //     if (index !== -1) {
-    //       this.products[index] = { ...this.selectedProduct }; // Update the product in the list
-    //     }
-    //     this.closeUpdateForm();
-    //     alert('Product updated successfully');
-    //   },
-    //   error: (error: any) => {
-    //     console.error('Error updating product:', error);
-    //     alert('Error updating product');
-    //   },
-    // });
+    this.productService
+      .updateProduct(this.selectedProduct, this.selectedProduct.productId)
+      .subscribe({
+        next: (updatedProduct: Product) => {
+          this.fetchProducts();
+          this.closeUpdateForm();
+          this.popup.showPopup("Product updated successfully");
+        },
+        error: (error: any) => {
+          console.error("Error updating product:", error);
+          this.popup.showPopup("Error updating product");
+        },
+      });
   }
 }

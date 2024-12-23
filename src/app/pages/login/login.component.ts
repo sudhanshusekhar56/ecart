@@ -19,14 +19,20 @@ export class LoginComponent {
 
   constructor(private authService: AuthService, private router: Router) {}
 
+  navigateToRegister() {
+    this.router.navigate(['/register']);
+  }
+
   login(): void {
     this.authService.login(this.username, this.password).subscribe({
       next: (response: Customer) => {
         localStorage.setItem('customer', JSON.stringify(response));
         if (response.isAdmin == true) {
-          this.router.navigate(['/admin-dashboard']);
+          this.router
+            .navigate(['/admin-dashboard'])
+            .then(() => window.location.reload());
         } else {
-          this.router.navigate(['/']);
+          this.router.navigate(['/']).then(() => window.location.reload());
         }
       },
       error: (error: any) => {

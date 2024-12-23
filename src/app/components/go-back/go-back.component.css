@@ -1,0 +1,12 @@
+button {
+  padding: 10px 20px;
+  background-color: #16423c; /* Green background color */
+  color: #ffffff; /* White text color */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #206143; /* Darker shade of green for hover effect */
+}

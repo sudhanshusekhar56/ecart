@@ -1,0 +1,56 @@
+<div class="cart-container">
+  <h1>Your Cart</h1>
+
+  <div *ngIf="cartItems.length === 0" class="empty-cart">
+    <p>Your cart is empty!</p>
+  </div>
+
+  <div *ngFor="let item of cartItems" class="cart-item">
+    <div class="product-details">
+      <h2>{{ item.productName }}</h2>
+      <p><strong>Price:</strong> ${{ item.productPrice }}</p>
+      <p><strong>Category:</strong> {{ item.productCategory }}</p>
+      <p><strong>Description:</strong> {{ item.productDescription }}</p>
+      <p><strong>Quantity:</strong> {{ item.orderQty }}</p>
+    </div>
+    <div class="cart-actions">
+      <label>
+        <strong>Quantity: </strong>
+        <input
+          type="number"
+          #quantityInput
+          min="1"
+          class="quantity-input"
+          placeholder="{{ item.orderQty }}"
+        />
+      </label>
+      <div class="btn-container">
+        <button
+          class="btn update-btn"
+          (click)="updateOrderQty(item.orderId, quantityInput)"
+        >
+          Update
+        </button>
+        <button class="btn delete-btn" (click)="deleteCartItem(item.orderId)">
+          Delete
+        </button>
+      </div>
+      <button class="btn checkout-btn" (click)="openCheckoutPopup(item)">
+        Checkout
+      </button>
+    </div>
+  </div>
+  <!-- Popup Component -->
+  <app-popup #popup></app-popup>
+  <div class="back-button">
+    <app-go-back></app-go-back>
+  </div>
+  <app-order-popup
+    *ngIf="isCheckoutPopupVisible"
+    [isVisible]="isCheckoutPopupVisible"
+    [productDetails]="selectedProduct"
+    (onConfirmOrder)="onConfirmOrder($event)"
+    (onCancelOrder)="closeCheckoutPopup()"
+  >
+  </app-order-popup>
+</div>

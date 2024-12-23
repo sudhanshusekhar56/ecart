@@ -1,0 +1,95 @@
+.main {
+  min-height: 87vh;
+}
+
+.back-button {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile-info {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #16423c;
+}
+
+.profile-info p {
+  margin-bottom: 10px;
+}
+
+.profile-info button.btn {
+  display: block;
+  margin: 20px auto;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 4px;
+  background-color: #6a9c89;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.profile-info button.btn:hover {
+  background-color: #16423c;
+  transform: scale(1.05);
+}
+
+.profile-info label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+  color: #16423c;
+}
+
+.profile-info input,
+.profile-info textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0 15px;
+  border: 1px solid #6a9c89;
+  border-radius: 4px;
+  background-color: #f4f9f7;
+  color: #16423c;
+}
+
+.profile-info input:focus,
+.profile-info textarea:focus {
+  border-color: #16423c;
+  outline: none;
+  box-shadow: 0 0 5px #6a9c89;
+}
+
+.profile-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.profile-actions .btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  background-color: #6a9c89;
+  color: white;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.profile-actions .btn:hover {
+  background-color: #16423c;
+  color: #6a9c89;
+}

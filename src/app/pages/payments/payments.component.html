@@ -1,0 +1,94 @@
+<div class="main">
+  <div class="payment-container">
+    <h2>Payment Information</h2>
+
+    <form (ngSubmit)="submitPayment()" #paymentForm="ngForm">
+      <div class="form-group">
+        <label for="cardNumber">Card Number:</label>
+        <input
+          type="text"
+          id="cardNumber"
+          [(ngModel)]="paymentDetails.cardNumber"
+          name="cardNumber"
+          required
+          maxlength="16"
+          pattern="[0-9]{12}"
+          placeholder="Enter your 12-digit card number"
+          #cardNumber="ngModel"
+        />
+        <div *ngIf="cardNumber.invalid && cardNumber.touched" class="error">
+          Invalid card number. It must be 12 digits.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="cardHolderName">Cardholder's Name:</label>
+        <input
+          type="text"
+          id="cardHolderName"
+          [(ngModel)]="paymentDetails.cardHolderName"
+          name="cardHolderName"
+          required
+          maxlength="50"
+          placeholder="Enter the name on the card"
+          #cardHolderName="ngModel"
+        />
+        <div
+          *ngIf="cardHolderName.invalid && cardHolderName.touched"
+          class="error"
+        >
+          Cardholder's name is required.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="expiry">Expiry Date:</label>
+        <input
+          type="month"
+          id="expiry"
+          [(ngModel)]="paymentDetails.expiryDate"
+          name="expiry"
+          required
+          (ngModelChange)="validateExpiryDate()"
+          #expiry="ngModel"
+        />
+        <div *ngIf="expiry.invalid && expiry.touched" class="error">
+          Expiry date is required.
+        </div>
+        <div *ngIf="expiryError" class="error">
+          Expiry date cannot be in the past.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="cvv">CVV:</label>
+        <input
+          type="password"
+          id="cvv"
+          [(ngModel)]="paymentDetails.cvv"
+          name="cvv"
+          required
+          maxlength="3"
+          pattern="[0-9]{3}"
+          placeholder="3-digit CVV"
+          #cvv="ngModel"
+        />
+        <div *ngIf="cvv.invalid && cvv.touched" class="error">
+          Invalid CVV. It must be 3 digits.
+        </div>
+      </div>
+
+      <button
+        type="submit"
+        class="submit-btn"
+        [disabled]="paymentForm.invalid || expiryError"
+      >
+        Make Payment
+      </button>
+    </form>
+  </div>
+  <app-popup #popup></app-popup>
+  <div class="back-button">
+    <app-go-back></app-go-back>
+  </div>
+</div>

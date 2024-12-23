@@ -1,0 +1,112 @@
+<div class="main">
+  <div class="registration-form">
+    <h2>Register</h2>
+    <form [formGroup]="registrationForm" (ngSubmit)="submit()">
+      <!-- Name -->
+      <div>
+        <label for="customerName">Name:</label>
+        <input id="customerName" type="text" formControlName="customerName" />
+        <span
+          class="error"
+          *ngIf="f['customerName'].invalid && f['customerName'].touched"
+        >
+          Name is required (min. 5 characters).
+        </span>
+      </div>
+
+      <!-- Email -->
+      <div>
+        <label for="customerEmail">Email:</label>
+        <input
+          id="customerEmail"
+          type="email"
+          formControlName="customerEmail"
+        />
+        <span
+          class="error"
+          *ngIf="f['customerEmail'].invalid && f['customerEmail'].touched"
+        >
+          Valid email is required.
+        </span>
+      </div>
+
+      <!-- Address -->
+      <div>
+        <label for="customerAddress">Address:</label>
+        <textarea
+          id="customerAddress"
+          formControlName="customerAddress"
+        ></textarea>
+        <span
+          class="error"
+          *ngIf="f['customerAddress'].invalid && f['customerAddress'].touched"
+        >
+          Address is required.
+        </span>
+      </div>
+
+      <!-- Password -->
+      <div>
+        <label for="customerPassword">Password:</label>
+        <input
+          id="customerPassword"
+          type="password"
+          formControlName="customerPassword"
+        />
+        <span
+          class="error"
+          *ngIf="f['customerPassword'].invalid && f['customerPassword'].touched"
+        >
+          Password is required (min. 10 characters).
+        </span>
+      </div>
+
+      <!-- Confirm Password -->
+      <div>
+        <label for="confirmPassword">Confirm Password:</label>
+        <input
+          id="confirmPassword"
+          type="password"
+          formControlName="confirmPassword"
+        />
+        <span
+          class="error"
+          *ngIf="f['confirmPassword'].invalid && f['confirmPassword'].touched"
+        >
+          Confirm Password is required.
+        </span>
+        <span class="error" *ngIf="errorMessage">
+          {{ errorMessage }}
+        </span>
+      </div>
+
+      <!-- Submit Button -->
+      <div>
+        <button type="submit" [disabled]="registrationForm.invalid">
+          Register
+        </button>
+      </div>
+    </form>
+  </div>
+  <div
+    *ngIf="successMessage"
+    class="modal-overlay"
+    [ngClass]="{ hidden: !showModal }"
+  >
+    <div class="modal-container">
+      <p>{{ successMessage }}</p>
+      <p>Customer Registered:</p>
+      <ul>
+        <li><strong>ID:</strong> {{ registeredCustomer?.customerId }}</li>
+        <li><strong>Name:</strong> {{ registeredCustomer?.customerName }}</li>
+        <li><strong>Email:</strong> {{ registeredCustomer?.customerEmail }}</li>
+        <li>
+          <strong>Address:</strong> {{ registeredCustomer?.customerAddress }}
+        </li>
+        <li><strong>Is Admin:</strong> {{ registeredCustomer?.isAdmin }}</li>
+      </ul>
+      <button (click)="goLogin()">Next</button>
+      <button (click)="closeModal()">Close</button>
+    </div>
+  </div>
+</div>

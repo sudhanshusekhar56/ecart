@@ -1,0 +1,132 @@
+/* Dimmed background overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Popup container */
+.popup {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  width: 400px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
+  animation: fadeIn 0.3s ease-out;
+  font-family: "Arial", sans-serif;
+}
+
+.popup h2 {
+  margin-bottom: 20px;
+  color: #16423c; /* Updated to green theme */
+  text-align: center;
+  font-size: 18px;
+}
+
+/* Product details section */
+.product-details {
+  margin-bottom: 25px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 15px;
+  color: #16423c; /* Updated to green theme */
+}
+
+.product-details p {
+  margin: 8px 0;
+  font-size: 14px;
+  color: #333;
+}
+
+.product-details strong {
+  color: #2eaa53; /* Updated to green accent */
+}
+
+/* Form styles */
+form div {
+  margin-bottom: 20px;
+}
+
+form label {
+  display: block;
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 5px;
+  color: #16423c; /* Updated to green theme */
+}
+
+form input,
+form textarea {
+  width: -webkit-fill-available;
+  padding: 10px;
+  border: 1px solid #2eaa53; /* Updated to green theme */
+  border-radius: 8px;
+  font-size: 14px;
+  color: #16423c; /* Updated to green theme */
+  background-color: #e9efec;
+  transition: border-color 0.2s ease-in-out;
+}
+
+form input::placeholder,
+form textarea::placeholder {
+  color: #999;
+}
+
+form input:focus,
+form textarea:focus {
+  border-color: #2eaa53; /* Updated to green theme */
+  outline: none;
+}
+
+/* Button styles */
+.actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.actions button {
+  padding: 10px 15px;
+  font-size: 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.actions button[type="submit"] {
+  background-color: #16423c; /* Updated to green theme */
+  color: #ffffff;
+}
+
+.actions button[type="submit"]:hover {
+  background-color: #2eaa53; /* Updated to green accent */
+}
+
+.actions button[type="button"] {
+  background-color: #d4bee4;
+  color: #16423c; /* Updated to green theme */
+}
+
+.actions button[type="button"]:hover {
+  background-color: #2eaa53; /* Updated to green accent */
+  color: #ffffff;
+}
+
+/* Smooth animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

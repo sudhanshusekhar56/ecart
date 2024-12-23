@@ -1,0 +1,52 @@
+<div class="overlay" *ngIf="isVisible">
+  <div class="popup">
+    <h2>Order Details</h2>
+
+    <div class="product-details">
+      <p><strong>Product Name:</strong> {{ productDetails.productName }}</p>
+      <p><strong>Price:</strong> ${{ productDetails.productPrice }}</p>
+      <p>
+        <strong>Quantity:</strong>
+        {{ productDetails.orderQty ? productDetails.orderQty : 1 }}
+      </p>
+      <p *ngIf="productDetails.productPrice">
+        <strong>Total:</strong> ${{
+          productDetails.productPrice *
+            (productDetails.orderQty ? productDetails.quantity : 1)
+        }}
+      </p>
+    </div>
+
+    <form (ngSubmit)="onSubmit()">
+      <div>
+        <label for="address">Shipping Address:</label>
+        <textarea
+          id="address"
+          [(ngModel)]="address"
+          name="address"
+          rows="3"
+          placeholder="Enter your complete shipping address here..."
+          required
+        ></textarea>
+      </div>
+
+      <div>
+        <label for="phone">Phone Number:</label>
+        <input
+          type="text"
+          id="phone"
+          [(ngModel)]="phone"
+          name="phone"
+          placeholder="Enter your phone number"
+          required
+        />
+      </div>
+
+      <div class="actions">
+        <button type="submit">Confirm Order</button>
+        <button type="button" (click)="closePopup()">Cancel</button>
+      </div>
+    </form>
+  </div>
+  <app-popup #popup></app-popup>
+</div>

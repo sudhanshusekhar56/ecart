@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Wed Dec 11 07:59:46 IST 2024:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.16.1.1 - (1901046): instance a816c00e-0193-b38d-0cc1-000001101ce0 
+on database directory /home/nexus/dev/ecart-mavenUpdated/ecart-maven/EcartDb with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@4f2410ac 
+Loaded from file:/home/nexus/.m2/repository/org/apache/derby/derby/10.16.1.1/derby-10.16.1.1.jar
+java.vendor=Ubuntu
+java.runtime.version=21.0.4+7-Ubuntu-1ubuntu224.04
+user.dir=/home/nexus/Downloads/ecart/ecart-mavenUpdated/ecart-maven
+os.name=Linux
+os.arch=amd64
+os.version=6.8.0-47-generic
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''

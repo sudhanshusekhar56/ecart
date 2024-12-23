@@ -1,0 +1,53 @@
+<div class="main">
+  <div class="receipt-container">
+    <div class="receipt-header">
+      <h2>Order Receipt</h2>
+      <p>Thank you for your purchase!</p>
+    </div>
+    <div class="receipt-details">
+      <div class="detail-row">
+        <span>Order ID:</span>
+        <span>{{ order.orderId }}</span>
+      </div>
+      <div class="detail-row">
+        <span>Product Name:</span>
+        <span>{{ productName }}</span>
+      </div>
+      <div class="detail-row">
+        <span>Product Price:</span>
+        <span>{{ productPrice }}</span>
+      </div>
+      <div class="detail-row">
+        <span>Quantity:</span>
+        <span>{{ order.orderQty }}</span>
+      </div>
+      <div class="detail-row">
+        <span>Category:</span>
+        <span>{{ productCategory }}</span>
+      </div>
+      <div class="detail-row">
+        <span>Order Date:</span>
+        <span>{{ order.orderDate }}</span>
+      </div>
+      <div class="detail-row">
+        <span>Estimated Arrival:</span>
+        <span>{{ order.arrivalDate }}</span>
+      </div>
+      <div class="detail-row">
+        <span>Delivery Address:</span>
+        <span>{{ order.orderAddress }}</span>
+      </div>
+      <div class="detail-row">
+        <span>Status:</span>
+        <span>{{ order.orderStatus }}</span>
+      </div>
+    </div>
+    <div class="receipt-footer">
+      <p>We hope to see you again!</p>
+    </div>
+  </div>
+
+  <div class="back-button">
+    <app-go-back></app-go-back>
+  </div>
+</div>

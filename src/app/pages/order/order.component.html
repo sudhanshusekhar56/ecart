@@ -1,0 +1,45 @@
+<div class="main">
+  <div class="orders-container">
+    <h2>Your Orders</h2>
+
+    <!-- No orders found message -->
+    <div *ngIf="orders.length === 0" class="no-orders">
+      <p>No orders found.</p>
+    </div>
+
+    <!-- Loop through orders and display each one -->
+    <div *ngFor="let order of orders" class="order-card">
+      <div class="order-card-header">
+        <h3>{{ order.productName }}</h3>
+        <p><strong>Category:</strong> {{ order.productCategory }}</p>
+      </div>
+      <div class="order-card-body">
+        <div class="order-detail">
+          <p><strong>Description:</strong> {{ order.productDescription }}</p>
+          <p><strong>Order Quantity:</strong> {{ order.orderQty }}</p>
+          <p><strong>Price:</strong> ${{ order.productPrice }}</p>
+          <p><strong>Order Date:</strong> {{ order.orderDate }}</p>
+          <p><strong>Arrival Date:</strong> {{ order.arrivalDate }}</p>
+          <p><strong>Delivery Address:</strong> {{ order.orderAddress }}</p>
+
+          <!-- Total price -->
+          <p>
+            <strong>Total Price:</strong> ${{
+              calculateTotalPrice(order.productPrice, order.orderQty)
+            }}
+          </p>
+        </div>
+      </div>
+      <!-- Cancel order button -->
+      <div class="order-card-footer">
+        <button (click)="cancelOrder(order.orderId)" class="cancel-btn">
+          Cancel Order
+        </button>
+      </div>
+    </div>
+  </div>
+  <app-popup #popup></app-popup>
+  <div class="back-button">
+    <app-go-back></app-go-back>
+  </div>
+</div>

@@ -1,7 +1,24 @@
+.main {
+  min-height: 80vh;
+}
+
+.back-button {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+app-popup {
+  position: absolute;
+  top: 10;
+  right: 10;
+}
+
 .add-product {
   max-width: 500px;
-  margin: 0 auto;
-  background-color: #eeeeee;
+  margin: 9vh auto;
+  background-color: #e9efec; /* Light grayish background */
   padding: 2rem;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -15,6 +32,7 @@ form {
 
 label {
   font-weight: bold;
+  color: #16423c; /* Dark green */
 }
 
 input,
@@ -26,16 +44,21 @@ button {
   border: 1px solid #ccc;
 }
 
+input,
+textarea {
+  background-color: #ffffff; /* White for inputs */
+}
+
 button {
-  background-color: #3b1e54;
-  color: #ffffff;
+  background-color: #16423c; /* Dark green */
+  color: #ffffff; /* White text */
   border: none;
   cursor: pointer;
   transition: background-color 0.3s;
 }
 
 button:hover {
-  background-color: #9b7ebd;
+  background-color: #6a9c89; /* Lighter green on hover */
 }
 
 .success-popup,
@@ -47,11 +70,11 @@ button:hover {
 }
 
 .success-popup {
-  background-color: #d4edda;
-  color: #155724;
+  background-color: #e9efec; /* Light grayish background */
+  color: #16423c; /* Dark green */
 }
 
 .error-popup {
-  background-color: #f8d7da;
-  color: #721c24;
+  background-color: #f8d7da; /* Light red */
+  color: #721c24; /* Dark red */
 }

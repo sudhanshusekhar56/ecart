@@ -1,49 +1,59 @@
-<!-- view-orders.component.html -->
-<div class="view-orders-container">
-  <h1>View Orders</h1>
-  <table class="order-table">
-    <thead>
-      <tr>
-        <th>Product ID</th>
-        <th>Product Name</th>
-        <th>Price</th>
-        <th>Category</th>
-        <th>Description</th>
-        <th>Quantity</th>
-        <th>Status</th>
-        <th>Order Date</th>
-        <th>Arrival Date</th>
-        <th>Address</th>
-        <th>Update Status</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let order of orders">
-        <td>{{ order.productId }}</td>
-        <td>{{ order.productName }}</td>
-        <td>{{ order.productPrice }}</td>
-        <td>{{ order.productCategory }}</td>
-        <td>{{ order.productDescription }}</td>
-        <td>{{ order.orderQty }}</td>
-        <td>{{ order.orderStatus }}</td>
-        <td>{{ order.orderDate }}</td>
-        <td>{{ order.arrivalDate }}</td>
-        <td>{{ order.orderAddress }}</td>
-        <td id="action">
-          <select [(ngModel)]="order.orderStatus">
-            <option value="InTransit">InTransit</option>
-            <option value="Confirmed">Confirmed</option>
-            <option value="Returned">Returned</option>
-            <option value="Delivered">Delivered</option>
-          </select>
-          <button
-            class="btn update-btn"
-            (click)="updateOrderStatus(order.productId, order.orderStatus)"
-          >
-            Update
-          </button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+<div class="main">
+  <div class="view-orders-container">
+    <h1>View Orders</h1>
+    <table class="order-table">
+      <thead>
+        <tr>
+          <th>Product ID</th>
+          <th>Product Name</th>
+          <th>Price</th>
+          <th>Category</th>
+          <th>Description</th>
+          <th>Quantity</th>
+          <th>Status</th>
+          <th>Order Date</th>
+          <th>Arrival Date</th>
+          <th>Address</th>
+          <th>Update Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let order of orders">
+          <td>{{ order.productId }}</td>
+          <td>{{ order.productName }}</td>
+          <td>{{ order.productPrice }}</td>
+          <td>{{ order.productCategory }}</td>
+          <td>{{ order.productDescription }}</td>
+          <td>{{ order.orderQty }}</td>
+          <td>{{ order.orderStatus }}</td>
+          <td>{{ order.orderDate }}</td>
+          <td>{{ order.arrivalDate }}</td>
+          <td>{{ order.orderAddress }}</td>
+          <td id="action">
+            <select #newStatus>
+              <option value="" disabled selected>Select Status</option>
+              <option value="InTransit">InTransit</option>
+
+              <option value="Confirmed">Confirmed</option>
+
+              <option value="Returned">Returned</option>
+
+              <option value="Delivered">Delivered</option>
+            </select>
+
+            <button
+              class="btn update-btn"
+              (click)="updateOrderStatus(order.orderId, newStatus.value)"
+            >
+              Update
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <app-popup #popup></app-popup>
+  <div class="back-button">
+    <app-go-back></app-go-back>
+  </div>
 </div>

@@ -3,7 +3,7 @@
   text-align: center;
   padding: 2rem;
   font-family: Arial, sans-serif;
-  background-color: #eeeeee;
+  background-color: #f0f8f0;
   height: -webkit-fill-available;
 }
 
@@ -16,7 +16,7 @@
 }
 
 .card {
-  background-color: #3b1e54;
+  background-color: #2d6a4f;
   color: #ffffff;
   padding: 1.5rem;
   border-radius: 8px;
@@ -34,5 +34,5 @@
 
 .card p {
   font-size: 1rem;
-  color: #d4bee4;
+  color: #a3d9a5;
 }

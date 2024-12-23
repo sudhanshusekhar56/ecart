@@ -1,0 +1,88 @@
+<div class="main">
+  <div class="profile-container">
+    <h2>Profile</h2>
+    <div class="profile-info">
+      <!-- Display data in view mode or edit mode based on `isEditMode` -->
+
+      <div *ngIf="!isEditMode">
+        <p><strong>ID:</strong> {{ customer.customerId }}</p>
+
+        <p><strong>Name:</strong> {{ customer.customerName }}</p>
+
+        <p><strong>Email:</strong> {{ customer.customerEmail }}</p>
+
+        <p><strong>Address:</strong> {{ customer.customerAddress }}</p>
+
+        <p>
+          <strong>Admin Privilages :</strong>
+          {{ customer.isAdmin ? "YES" : "NO" }}
+        </p>
+        <button class="btn" (click)="togglePasswordEditMode()">
+          Change Password
+        </button>
+        <button class="btn" (click)="toggleEditMode()">Edit Profile</button>
+      </div>
+
+      <!-- Display editable fields when in edit mode -->
+      <div *ngIf="isPasswordEditMode">
+        <!-- Password Fields -->
+        <label for="oldPassword">Current Password</label>
+        <input
+          type="text"
+          id="oldPassword"
+          [(ngModel)]="oldPassword"
+          placeholder="Enter current password"
+        />
+
+        <label for="newPassword">New Password</label>
+        <input
+          type="text"
+          id="newPassword"
+          [(ngModel)]="newPassword"
+          placeholder="Enter new password"
+        />
+
+        <label for="confirmPassword">Confirm New Password</label>
+        <input
+          type="text"
+          id="confirmPassword"
+          [(ngModel)]="confirmPassword"
+          placeholder="Re-enter new password"
+        />
+
+        <div class="profile-actions">
+          <button class="btn" (click)="changePassword()">Save Changes</button>
+          <button class="btn" (click)="togglePasswordEditMode()">Cancel</button>
+        </div>
+      </div>
+
+      <!-- Display editable fields when in edit mode -->
+      <div *ngIf="isEditMode">
+        <label for="customerName">Name</label>
+        <input
+          type="text"
+          id="customerName"
+          [(ngModel)]="customer.customerName"
+        />
+
+        <label for="email">Email</label>
+        <input type="email" id="email" [(ngModel)]="customer.customerEmail" />
+
+        <label for="address">Address</label>
+        <textarea
+          id="address"
+          [(ngModel)]="customer.customerAddress"
+        ></textarea>
+
+        <div class="profile-actions">
+          <button class="btn" (click)="saveProfile()">Save Changes</button>
+          <button class="btn" (click)="toggleEditMode()">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-popup #popup></app-popup>
+  <div class="back-button">
+    <app-go-back></app-go-back>
+  </div>
+</div>

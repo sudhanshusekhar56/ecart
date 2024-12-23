@@ -1,5 +1,6 @@
 // order.model.ts
 export interface Order {
+  orderId: number;
   productId: number;
   productName: string;
   productPrice: number;

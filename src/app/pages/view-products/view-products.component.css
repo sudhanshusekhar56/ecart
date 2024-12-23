@@ -1,3 +1,4 @@
+/* view-products.component.css */
 .view-products-container {
   padding: 20px;
   font-family: Arial, sans-serif;
@@ -7,7 +8,7 @@ h1 {
   text-align: center;
   margin-bottom: 20px;
   font-size: 24px;
-  color: #3b1e54;
+  color: #16423c; /* Dark green for header */
 }
 
 .product-table {
@@ -24,12 +25,21 @@ h1 {
 }
 
 .product-table th {
-  background-color: #d4bee4;
-  color: #3b1e54;
+  background-color: #e9efec; /* Light grayish background */
+  color: #16423c; /* Dark green text */
 }
 
 .product-table td {
-  background-color: #eeeeee;
+  background-color: #ffffff; /* White background for table data */
+}
+
+.product-table tr:nth-child(even) td {
+  background-color: #f4f4f4; /* Light gray for even rows */
+}
+
+.product-table tr:hover td {
+  background-color: #6a9c89; /* Lighter green on hover */
+  color: white;
 }
 
 .btn {
@@ -39,15 +49,26 @@ h1 {
   cursor: pointer;
   border-radius: 4px;
 }
+app-popup {
+  position: absolute;
+  top: 10;
+  right: 10;
+}
+.back-button {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 .update-btn {
-  background-color: #4caf50;
+  background-color: #4caf50; /* Green */
   color: white;
   font-weight: bold;
 }
 
 .delete-btn {
-  background-color: #f44336;
+  background-color: #f44336; /* Red */
   color: white;
   font-weight: bold;
 }
@@ -57,12 +78,12 @@ h1 {
   padding: 20px;
   border: 1px solid #ddd;
   border-radius: 5px;
-  background-color: #f9f9f9;
+  background-color: #f9f9f9; /* Light background */
 }
 
 .update-product-form h2 {
   text-align: center;
-  color: #3b1e54;
+  color: #16423c; /* Dark green for header */
   font-size: 22px;
 }
 
@@ -70,7 +91,7 @@ h1 {
   display: block;
   margin-bottom: 8px;
   font-weight: bold;
-  color: #3b1e54;
+  color: #16423c; /* Dark green for label text */
 }
 
 .update-product-form input,
@@ -84,14 +105,14 @@ h1 {
 }
 
 .submit-btn {
-  background-color: #4caf50;
+  background-color: #4caf50; /* Green */
   color: white;
   font-weight: bold;
   padding: 10px 15px;
 }
 
 .cancel-btn {
-  background-color: #f44336;
+  background-color: #f44336; /* Red */
   color: white;
   font-weight: bold;
   padding: 10px 15px;
@@ -109,9 +130,9 @@ h1 {
 .product-table td,
 .product-table th {
   font-size: 14px;
-  color: #3b1e54;
+  color: #16423c; /* Dark green for text */
 }
 
 .product-table td {
-  background-color: #f9f9f9;
+  background-color: #f9f9f9; /* Light gray for rows */
 }

@@ -1,0 +1,88 @@
+.main {
+  min-height: 88vh;
+}
+.orders-container {
+  width: 60%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.back-button {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.order-card {
+  width: 45%;
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 180px; /* Reduced height */
+  transition: transform 0.3s ease;
+}
+
+/* Order details */
+.order-details h3 {
+  color: #16423c; /* Updated to green theme */
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.order-details p {
+  color: #555;
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+/* Cancel button styling */
+.cancel-btn {
+  background-color: #16423c; /* Updated to green theme */
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 25px;
+  font-size: 14px;
+  align-self: flex-end;
+  transition: background-color 0.3s ease;
+}
+
+.cancel-btn:hover {
+  background-color: #2a153d; /* Slightly darker green for hover */
+}
+
+/* No orders message */
+.no-orders {
+  text-align: center;
+  font-size: 18px;
+  color: #555;
+}
+
+/* Add a little spacing between individual cards */
+.order-card {
+  margin-bottom: 15px;
+}
+
+/* Ensuring smooth layout with responsive design */
+@media (max-width: 600px) {
+  .order-card {
+    padding: 10px;
+  }
+
+  .cancel-btn {
+    padding: 6px 12px;
+  }
+
+  .order-details p {
+    font-size: 12px;
+  }
+}

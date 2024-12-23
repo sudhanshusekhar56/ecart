@@ -1,14 +1,24 @@
+.main {
+  min-height: 88vh;
+  background-color: #e9efec;
+}
+
+app-popup {
+  position: absolute;
+  top: 10;
+  right: 10;
+}
+
 .product-container {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
   justify-content: center;
   padding: 1rem;
-  background-color: #f9f9f9;
 }
 
 .product-card {
-  border: 1px solid #ddd;
+  border: 1px solid #d4bee4;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 1.5rem;
@@ -19,7 +29,7 @@
 
 .product-card h2 {
   font-size: 1.5rem;
-  color: #3b1e54;
+  color: #16423c;
   margin-bottom: 0.5rem;
 }
 
@@ -46,19 +56,19 @@
 }
 
 .add-to-cart {
-  background-color: #3b1e54;
+  background-color: #16423c;
 }
 
 .buy-now {
-  background-color: #9b7ebd;
+  background-color: #6a9c89;
 }
 
 .add-to-cart:hover {
-  background-color: #2a153d;
+  background-color: #2a453d;
 }
 
 .buy-now:hover {
-  background-color: #815daa;
+  background-color: #8baf9a;
 }
 
 .btn:focus {

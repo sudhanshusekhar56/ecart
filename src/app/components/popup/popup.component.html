@@ -1,0 +1,4 @@
+<div *ngIf="isVisible" class="popup" [class.show]="isVisible">
+  <span class="message">{{ message }}</span>
+  <button class="close-btn" (click)="closePopup()">×</button>
+</div>
